@@ -133,7 +133,7 @@ const sectionColors = {
   expertise: '#ececec',
   process: '#44493d',
   market: '#111111',
-  foot: '#ececec',
+  foot: '#ffffff',
 };
 
 const observer = new IntersectionObserver((entries) => {
