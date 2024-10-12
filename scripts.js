@@ -28,16 +28,30 @@ setInterval(changeImage, 2000);
 const texts = document.querySelectorAll('.text');
 const displayedImage = document.getElementById('displayed-image');
 
-texts.forEach(text => {
-  text.addEventListener('mouseover', () => {
-    displayedImage.src = text.getAttribute('data-image');
-    displayedImage.classList.add('show');
-  });
+const handleHover = (text) => {
+  const newImageSrc = text.getAttribute('data-image');
+  if (newImageSrc) {
+    displayedImage.src = newImageSrc;
+  }
+  displayedImage.classList.add('show');
 
-  text.addEventListener('mouseout', () => {
-    displayedImage.classList.remove('show');
-  });
+  texts.forEach(t => t.classList.remove('active'));
+
+  text.classList.add('active');
+};
+
+texts.forEach(text => {
+  text.addEventListener('mouseover', () => handleHover(text));
 });
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const firstText = texts[0];
+  if (firstText) {
+    handleHover(firstText);
+  }
+});
+
 
 
 
@@ -45,7 +59,7 @@ texts.forEach(text => {
 
 const headers = document.querySelectorAll('.accordion-header');
 
-headers.forEach(header => {
+headers.forEach((header, index) => {
   header.addEventListener('click', () => {
     const content = header.nextElementSibling;
     const icon = header.querySelector('.accordion-icon');
@@ -60,7 +74,16 @@ headers.forEach(header => {
     content.classList.toggle('show');
     icon.textContent = content.classList.contains('show') ? '-' : '+';
   });
+
+  if (index === 0) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.accordion-icon');
+    content.classList.add('show');
+    icon.textContent = '-';
+  }
 });
+
+
 
 
 
@@ -133,7 +156,7 @@ const sectionColors = {
   expertise: '#ececec',
   process: '#44493d',
   market: '#111111',
-  foot: '#ffffff',
+  foot: '#fff',
 };
 
 const observer = new IntersectionObserver((entries) => {
