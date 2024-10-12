@@ -182,7 +182,6 @@
 #plan{
     padding: 100px;
     height: 130vh;
-    background-color: #111111;
 }
 
 .plan-title{
@@ -221,7 +220,6 @@
 #expertise{
     height: 100vh;
     padding: 100px;
-    background-color: #ececec;
 }
 .staging-title{
     font-size: 10rem;
@@ -283,14 +281,14 @@
   /*process*/
 
   #process{
-    height: 50vh;
-    background-color: #44493d;
+    height: 100vh;
     padding: 100px;
     display: flex;
     gap: 50px;
   }
   .title{
     width: 50%;
+    align-content: center;
   }
   .process-title{
     font-size: 5rem;
@@ -299,6 +297,7 @@
   }
   .accordion {
     width: 50%;
+    align-content: center;
   }
   
   .accordion-item {
@@ -336,25 +335,11 @@
   }
 
 
-/* -- */
-.room{
-    background-color: #44493d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 100px;
-}
-.room img{
-    width: 90%;
-    object-fit: cover;
-}
-
-
 /* market */
 
 #market{
     padding: 100px;
-    background-color: #111111;
+    height: auto;
 }
 .title-box{
     width: 70%;
@@ -493,7 +478,7 @@
 
 /* footer */
 
-footer{
+#foot{
   padding: 100px 300px;
 }
 .footer-container{
@@ -697,7 +682,7 @@ button:hover {
   .left-work h1{
     font-size: 2rem;
   }
-  footer{
+  #foot{
     padding: 100px;
   }
   .left-footer{
@@ -828,18 +813,23 @@ button:hover {
   }
   #plan{
     padding: 50px;
+    background-color: #111111;
   }
   #expertise{
     padding: 50px;
+    background-color: #ececec;
   }
   #process{
     padding: 50px;
+    background-color: #44493d;
   }
   #market{
     padding: 50px;
+    background-color: #111111;
   }
-  footer{
+  #foot{
     padding: 50px;
+    background-color: #ececec;
   }
   .plan-title, .staging-title, .title-box h1{
     font-size: 5rem;
@@ -851,9 +841,6 @@ button:hover {
     display: none;
   }
   .image-container{
-    display: none;
-  }
-  .room{
     display: none;
   }
   #process{
@@ -998,5 +985,9 @@ button:hover {
     }
   }
   
-
+  @media (min-width: 768px) {
+    body {
+      transition: background-color 0.5s ease; /* Only apply the transition on larger screens */
+    }
+  }
   
