@@ -898,7 +898,7 @@ button:hover {
   }
 }
 
-@media (max-width: 492px){
+@media (max-width: 600px){
   .plan-title, .staging-title, .title-box h1{
     font-size: 3rem;
   }
