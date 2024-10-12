@@ -181,7 +181,7 @@
 
 #plan{
     padding: 100px;
-    height: 130vh;
+    height: auto;
 }
 
 .plan-title{
@@ -218,7 +218,7 @@
 /* expertise  */
 
 #expertise{
-    height: 100vh;
+    height: auto;
     padding: 100px;
 }
 .staging-title{
@@ -226,57 +226,62 @@
     color: #111111;
     font-weight: 500;
   }
-.container {
+  .container {
     display: flex;
     padding: 20px 0;
-  }
-  .text {
+}
+
+.text {
     cursor: default;
     color: #2b2b2b;
     font-size: 2rem;
     margin-top: 40px;
     font-weight: 700;
-  }
-  
-  .text-title {
+}
+
+.text-title {
     text-decoration: none;
     transition: text-decoration 0.3s ease-in-out;
-  }
-  
-  .arrow-icon {
+}
+
+.arrow-icon {
     display: inline-block;
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-  
-  .text:hover .arrow-icon {
+}
+
+.text:hover .arrow-icon, 
+.text.active .arrow-icon {
     opacity: 1;
     transform: translateX(10px);
-  }
-  
-  .text:hover .text-title {
+}
+
+.text:hover .text-title, 
+.text.active .text-title {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 10px;
-  }
-  
-  .image-container {
+}
+
+.image-container {
     left: 15%;
     width: 50%;
     overflow: hidden;
     position: relative;
-  }
-  
-  .image {
+}
+
+.image {
     width: 100%;
     height: auto;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 0.5s ease;
-  }
-  
-  .image.show {
+}
+
+.image.show, 
+.image.active {
     opacity: 1;
-  }
+}
+
   
   /*process*/
 
@@ -670,7 +675,7 @@ button:hover {
   .plan-title, .staging-title, .title-box h1{
     font-size: 9rem;
   }
-  .plan-text h1, .text-title{
+  .plan-text h1{
     font-size: 1.2rem;
   }
   .plan-text p{
@@ -720,6 +725,31 @@ button:hover {
   .right-footer{
     padding-right: 50px;
   }
+  .container{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .image-container{
+    margin-top: 20px;
+    width: 100%;
+  }
+  .text-title{
+    font-size: 1.3rem;
+  }
+  .text{
+    margin: 20px;
+  }
+  .item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .plan-container{
+    flex-direction: column;
+  }
+  .right-container{
+    width: 100%;
+  }
   
 }
 
@@ -742,9 +772,6 @@ button:hover {
   #plan{
     height: auto;
   }
-  .text-title{
-    font-size: 1rem;
-  }
   #expertise{
     height: auto;
   }
@@ -753,9 +780,6 @@ button:hover {
   }
   .title-box{
     width: 100%;
-  }
-  .image-container{
-    left: 20px;
   }
   .local-container{
     flex-direction: column;
@@ -829,19 +853,12 @@ button:hover {
   }
   #foot{
     padding: 50px;
-    background-color: #ececec;
   }
   .plan-title, .staging-title, .title-box h1{
     font-size: 5rem;
   }
   .right-local h1, .left-national h1{
     font-size: 1.5rem;
-  }
-  .right-container{
-    display: none;
-  }
-  .image-container{
-    display: none;
   }
   #process{
     height: auto;
@@ -882,6 +899,9 @@ button:hover {
   }
   .right-socials{
     margin-top: 20px;
+  }
+  .text-title{
+    font-size: 1rem;
   }
 }
 
@@ -982,6 +1002,9 @@ button:hover {
   
     .mobile-menu.show {
       left: 0;
+    }
+    .image-container{
+      left: 20px;
     }
   }
   
