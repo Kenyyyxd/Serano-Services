@@ -122,7 +122,36 @@ planTitles.forEach(title => {
 
 
 
+// background change color
 
+if (window.innerWidth > 760) {
+const sections = document.querySelectorAll('.section');
+
+
+const sectionColors = {
+  plan: '#111111',
+  expertise: '#ececec',
+  process: '#44493d',
+  market: '#111111',
+  foot: '#ececec',
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      document.body.style.backgroundColor = sectionColors[entry.target.id];
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+}
 
 
 
